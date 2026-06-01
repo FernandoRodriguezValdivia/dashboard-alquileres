@@ -123,3 +123,42 @@ h1 {
   color: #555;
   font-size: 0.9rem;
 }
+
+/* Filtros */
+.filtros {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.filtros button {
+  background: #f0f0f0;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  color: #333;
+}
+
+.filtros button:hover {
+  background: #e0e0e0;
+  transform: translateY(-2px);
+}
+
+.filtros button.activo {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.sin-resultados {
+  text-align: center;
+  padding: 50px;
+  font-size: 1.2rem;
+  color: #666;
+}

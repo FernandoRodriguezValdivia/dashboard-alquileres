@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { 
   promedioAlquiler, 
   precioPromedioPorM2, 
@@ -9,9 +9,26 @@ import {
 import propiedadesData from '../data/propiedades.json';
 import Card from './Card';
 import Bar from './Bar';
+import Filters from './Filters';
 
 const Dashboard = () => {
-  const propiedades = propiedadesData.propiedades;
+  const [filtro, setFiltro] = useState('todos');
+  
+  const todasPropiedades = propiedadesData.propiedades;
+  
+  const propiedades = filtro === 'todos' 
+    ? todasPropiedades 
+    : todasPropiedades.filter(p => p.estado === filtro);
+  
+  if (propiedades.length === 0) {
+    return (
+      <div className="dashboard">
+        <h1>📊 Dashboard de Análisis de Alquileres</h1>
+        <Filters filtro={filtro} setFiltro={setFiltro} todasPropiedades={todasPropiedades} />
+        <p className="sin-resultados">No hay propiedades en esta categoría.</p>
+      </div>
+    );
+  }
   
   const promedio = promedioAlquiler(propiedades);
   const precioM2 = precioPromedioPorM2(propiedades);
@@ -21,12 +38,28 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard">
-      <h1>📊 Dashboard de Análisis de Alquileres</h1>      
+      <h1>📊 Dashboard de Análisis de Alquileres</h1>
+
+      <Filters filtro={filtro} setFiltro={setFiltro} todasPropiedades={todasPropiedades} />
+      
       <div className="stats-grid">
-        <Card title="💰 Alquiler promedio" value={`S/ ${promedio}`} />
-        <Card title="📐 Precio por m² promedio" value={`S/ ${precioM2} /m²`} />
-        <Card title="🏆 Más rentable (S/m²)" value={masRentable.nombre} detalle={`S/ ${(masRentable.alquiler / masRentable.m2).toFixed(2)}/m²`} />
-        <Card title="📈 Ocupación" value={`${ocupacion}%`} />
+        <Card 
+          title="💰 Alquiler promedio" 
+          value={`S/ ${promedio}`}
+        />
+        <Card
+          title="📐 Precio por m² promedio"
+          value={`S/ ${precioM2} /m²`}
+        />
+        <Card
+          title="🏆 Más rentable (S/m²)"
+          value={masRentable.nombre}
+          detail={`S/ ${(masRentable.alquiler / masRentable.m2).toFixed(2)}/m²`}
+        />
+        <Card
+          title="📈 Ocupación"
+          value={`${ocupacion}%`}
+        />
       </div>
       
       <div className="distribucion">
