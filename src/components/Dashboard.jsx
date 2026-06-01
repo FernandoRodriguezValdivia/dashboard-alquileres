@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { 
   promedioAlquiler, 
   precioPromedioPorM2, 
@@ -10,6 +10,7 @@ import propiedadesData from '../data/propiedades.json';
 import Card from './Card';
 import Bar from './Bar';
 import Filters from './Filters';
+import Chart from './Chart';
 
 const Dashboard = () => {
   const [filtro, setFiltro] = useState('todos');
@@ -73,6 +74,8 @@ const Dashboard = () => {
           ))}
         </div>
       </div>
+
+      <Chart distribucion={distribucion} propiedadesLength={propiedades.length} />
       
       <div className="footer-mate">
         🧠 Aplicación de: promedios, ratios, porcentajes y distribución de frecuencias
