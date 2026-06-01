@@ -25,7 +25,7 @@ Implementé **5 métricas analíticas**:
 Separé toda la lógica matemática en `calculos.js` para que sea testeable e independiente de la UI. Las mismas funciones podrían reutilizarse en backend Node.js.
 
 ## 🔗 Demo
-
+[Link a Demo](https://dashboar-alquileres.netlify.app/)
 
 ## 🚀 Cómo correrlo local
 ```bash
