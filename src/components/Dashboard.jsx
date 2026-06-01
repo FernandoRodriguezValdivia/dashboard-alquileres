@@ -11,6 +11,7 @@ import Card from './Card';
 import Bar from './Bar';
 import Filters from './Filters';
 import Chart from './Chart';
+import Prediction from './Prediction';
 
 const Dashboard = () => {
   const [filtro, setFiltro] = useState('todos');
@@ -77,6 +78,8 @@ const Dashboard = () => {
 
       <Chart distribucion={distribucion} propiedadesLength={propiedades.length} />
       
+      <Prediction propiedades={propiedades} />
+
       <div className="footer-mate">
         🧠 Aplicación de: promedios, ratios, porcentajes y distribución de frecuencias
       </div>
