@@ -1,0 +1,10 @@
+{
+  "propiedades": [
+    { "id": 1, "nombre": "Centro - Depto 2 hab", "alquiler": 1200, "m2": 65, "habitaciones": 2, "estado": "alquilado" },
+    { "id": 2, "nombre": "San Isidro - Casa 4 hab", "alquiler": 2500, "m2": 120, "habitaciones": 4, "estado": "libre" },
+    { "id": 3, "nombre": "Miraflores - Studio", "alquiler": 800, "m2": 35, "habitaciones": 1, "estado": "alquilado" },
+    { "id": 4, "nombre": "Barranco - Loft", "alquiler": 1500, "m2": 70, "habitaciones": 2, "estado": "alquilado" },
+    { "id": 5, "nombre": "Surco - Depto 3 hab", "alquiler": 1800, "m2": 90, "habitaciones": 3, "estado": "libre" },
+    { "id": 6, "nombre": "Lince - Depto pequeño", "alquiler": 900, "m2": 40, "habitaciones": 1, "estado": "alquilado" }
+  ]
+}
